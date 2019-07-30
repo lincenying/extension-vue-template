@@ -1,4 +1,4 @@
-# vue-extension-template
+# extension-vue-template
 `vue-cli3` + `webpack4` + `element-ui`  实现编译打包Chrome浏览器插件
 
 ### content 文件夹
