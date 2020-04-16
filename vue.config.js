@@ -15,16 +15,14 @@ chromeName.forEach(name => {
 })
 
 // 生成manifest文件
-const manifest =
-    process.env.NODE_ENV === 'production'
-        ? {
-              from: path.resolve('src/manifest.production.json'),
-              to: `${path.resolve('dist')}/manifest.json`
-          }
-        : {
-              from: path.resolve('src/manifest.development.json'),
-              to: `${path.resolve('dist')}/manifest.json`
-          }
+const manifest = {}
+if (process.env.NODE_ENV === 'production') {
+    manifest.from = path.resolve('src/manifest.production.json')
+    manifest.to = `${path.resolve('dist')}/manifest.json`
+} else {
+    manifest.from = path.resolve('src/manifest.development.json')
+    manifest.to = `${path.resolve('dist')}/manifest.json`
+}
 
 const plugins = [new CopyWebpackPlugin([manifest])]
 
@@ -62,7 +60,7 @@ module.exports = {
         output: {
             filename: 'js/[name].js'
         },
-        plugins: plugins
+        plugins
     },
     css: {
         extract: {

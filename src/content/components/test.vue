@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button @click="handleClick" type="primary">测试按钮</el-button>
+        <el-button @click="handleClick" type="primary">测试按钮Test</el-button>
     </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
     },
     methods: {
         handleClick() {
+            console.log(1111111)
             this.$app.toggleTable(true)
         }
     }

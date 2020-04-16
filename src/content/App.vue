@@ -1,5 +1,6 @@
 <template>
     <div class="app-wrap">
+        <el-button @click="handleClick" type="primary">测试按钮App</el-button>
         <el-dialog title="提示" :visible.sync="showTable" width="60%">
             <comp-table></comp-table>
             <span slot="footer" class="dialog-footer">
@@ -11,7 +12,9 @@
 </template>
 
 <script>
+import '@/assets/less/index.less'
 import compTable from './components/table.vue'
+
 export default {
     name: 'app',
     components: {
@@ -23,6 +26,9 @@ export default {
         }
     },
     methods: {
+        handleClick() {
+            this.toggleTable(true)
+        },
         toggleTable(status) {
             this.showTable = status
         },

@@ -1,3 +1,4 @@
+/* eslint-disable no-inline-comments */
 // 代码来源：https://github.com/xpl/crx-hotreload/edit/master/hot-reload.js
 const filesInDirectory = dir =>
     new Promise(resolve =>
